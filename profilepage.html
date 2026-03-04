@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Portofolio | Data & Web Dev</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. Palet Warna Utama (Modern Tech) */
+        :root {
+            --bg-base: #F8F9FA;
+            --color-primary: #0F172A;
+            --color-secondary: #475569;
+            --color-accent: #3B82F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--color-secondary);
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-primary);
+        }
+
+        /* 2. Utility Classes Custom */
+        .text-accent { color: var(--color-accent); }
+        .bg-accent { background-color: var(--color-accent); color: white; border: none; }
+        .bg-accent:hover { background-color: #2563eb; color: white; }
+        .btn-outline-custom { border: 2px solid var(--color-primary); color: var(--color-primary); font-weight: 600; }
+        .btn-outline-custom:hover { background-color: var(--color-primary); color: white; }
+
+        /* 3. Navbar Styling (Efek Kaca/Blur) */
+        .navbar-custom {
+            background-color: rgba(248, 249, 250, 0.85);
+            backdrop-filter: blur(8px);
+        }
+
+        /* 4. Animasi Morph untuk Foto Profil */
+        .morph-wrapper {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .morph-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+            box-shadow: 0 15px 35px #3B82F6;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* 5. Social Dock Hover Effect (Contact) */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background-color: #ffffff;
+            color: var(--color-primary);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            background-color: var(--color-accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
+
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top py-2 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">elTech<span class="text-accent">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3 fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="container min-vh-100 d-flex align-items-center py-5">
+        <div class="row w-100 align-items-center flex-column-reverse flex-lg-row">
+            
+            <div class="col-lg-6 mt-5 mt-lg-0 text-center text-lg-start">
+                <p class="fs-5 mb-2 fw-semibold" style="color: var(--color-secondary);">Halo, selamat datang! Saya mahasiswa IT.</p>
+                <h1 class="display-4 fw-bold mb-4 lh-sm">
+                    Crafting Intelligent and <span class="text-accent">Inclusive</span> Digital Solutions
+                </h1>
+                <p class="lead mb-5" style="color: var(--color-secondary); max-width: 500px;">
+                    Menggabungkan ketajaman analitik data dengan desain antarmuka yang ramah pengguna untuk menciptakan teknologi yang berdampak nyata.
+                </p>
+                <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <a href="#projects" class="btn bg-accent btn-lg px-4 rounded-pill shadow-sm">Lihat Karya</a>
+                    <a href="#contact" class="btn btn-outline-custom btn-lg px-4 rounded-pill">Mari Diskusi</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="morph-wrapper">
+                    <img src="profilepic.png" alt="Foto Profil" class="morph-img">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="container py-5 my-5">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                <h2 class="fw-bold mb-3">Tentang Saya<span class="text-accent">.</span></h2>
+                <h4 class="fw-semibold mb-4 lh-base" style="color: var(--color-accent);">
+                    Menerjemahkan Data, Membangun Solusi, dan Menciptakan Dampak.
+                </h4>
+                
+                <p class="mb-3 lh-lg" style="color: var(--color-secondary);">
+                    Ketertarikan utama saya terletak pada eksplorasi dan analisis data. Saya sangat menikmati keseluruhan prosesnya—mulai dari <em>pre-processing</em> data mentah, mengevaluasi model, hingga menemukan <em>insight</em> yang berharga. Bagi saya, kendala di tengah proses analisis bukanlah hambatan, melainkan ruang untuk berpikir kritis dan memecahkan masalah.
+                </p>
+                <p class="mb-3 lh-lg" style="color: var(--color-secondary);">
+                    Dalam perjalanan saya membangun karir sebagai Data Scientist/Analyst, saya juga memiliki hasrat yang kuat dalam pengembangan antarmuka visual dan produk cipta guna. Saya menikmati proses merancang model AI yang bisa langsung diterapkan di dunia nyata, serta membangun antarmuka web yang interaktif.
+                </p>
+                <p class="mb-0 lh-lg" style="color: var(--color-secondary);">
+                    Saya percaya teknologi bekerja paling baik ketika ia inklusif. Ke depannya, saya memiliki visi untuk mengintegrasikan analitik data dan robotika guna menciptakan teknologi tepat guna, khususnya bagi penyandang disabilitas.
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-4 p-md-5 bg-white rounded-4 shadow-sm border" style="border-color: #f1f5f9 !important;">
+                    <h4 class="fw-bold mb-4">Keahlian Inti</h4>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold" style="color: var(--color-primary);">Data Analysis</span>
+                            <span class="fw-bold text-accent">85%</span>
+                        </div>
+                        <div class="progress" style="height: 8px; border-radius: 10px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 90%; border-radius: 10px;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold" style="color: var(--color-primary);">Machine Learning & Computer Vision</span>
+                            <span class="fw-bold text-accent">80%</span>
+                        </div>
+                        <div class="progress" style="height: 8px; border-radius: 10px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%; border-radius: 10px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold" style="color: var(--color-primary);">Front-End Web Development</span>
+                            <span class="fw-bold text-accent">70%</span>
+                        </div>
+                        <div class="progress" style="height: 8px; border-radius: 10px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 80%; border-radius: 10px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-0">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold" style="color: var(--color-primary);">UI/UX & Interactive Design</span>
+                            <span class="fw-bold text-accent">75%</span>
+                        </div>
+                        <div class="progress" style="height: 8px; border-radius: 10px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 75%; border-radius: 10px;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="research" class="container py-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Fokus Riset<span class="text-accent">.</span></h2>
+            <p style="color: var(--color-secondary);">Eksplorasi teknologi untuk solusi agrikultur dan komputasi cerdas.</p>
+        </div>
+
+        <div class="accordion shadow-sm rounded-4 overflow-hidden" id="researchAccordion">
+            
+            <div class="accordion-item border-0 border-bottom">
+                <h2 class="accordion-header">
+                    <button class="accordion-button fw-semibold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#research1" aria-expanded="true" style="color: var(--color-primary);">
+                        <i class="bi bi-tree-fill text-success me-3 fs-5"></i> 
+                        Sintesis Kanal NIR dan Citra UAV RGB menggunakan Conditional GAN untuk Peningkatan Akurasi Prediksi Hasil Panen Kelapa Sawit
+                        <span class="badge bg-warning text-dark ms-auto me-2">On-Going</span>
+                    </button>
+                </h2>
+                <div id="research1" class="accordion-collapse collapse show" data-bs-parent="#researchAccordion">
+                    <div class="accordion-body lh-lg" style="color: var(--color-secondary);">
+                        Riset ini berfokus pada pemanfaatan <em>Generative Adversarial Networks</em> (GAN) untuk menyintesis data citra agrikultur. Tujuannya adalah memecahkan masalah kelangkaan data visual spesifik guna melatih model prediksi hasil panen kelapa sawit agar jauh lebih akurat dan efisien.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#research2" aria-expanded="false" style="color: var(--color-primary);">
+                        <i class="bi bi-tree-fill text-success me-3 fs-5"></i>
+                        Evaluasi Dampak Ground Sampling Distance (GSD) terhadap Performa Model Prediksi Panen Kelapa Sawit Berbasis Citra UAV
+                        <span class="badge bg-warning text-dark ms-auto me-2">On-Going</span>
+                    </button>
+                </h2>
+                <div id="research2" class="accordion-collapse collapse" data-bs-parent="#researchAccordion">
+                    <div class="accordion-body lh-lg" style="color: var(--color-secondary);">
+                        Penelitian ini mengevaluasi bagaimana variasi tingkat detail spasial (GSD) dari tangkapan <em>drone</em> (UAV) memengaruhi kinerja model prediksi AI. Hasil dari riset ini diharapkan dapat menjadi standar operasional dalam pengambilan data udara untuk perkebunan presisi.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="container py-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Karya & Proyek<span class="text-accent">.</span></h2>
+            <p style="color: var(--color-secondary);">Implementasi data dan kode menjadi solusi nyata.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="bg-light" style="height: 200px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                        <span>[Gambar Brownie.ind]</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-primary rounded-pill fw-normal">Web Development</span>
+                            <span class="badge bg-secondary rounded-pill fw-normal">E-Commerce</span>
+                        </div>
+                        <h5 class="card-title fw-bold" style="color: var(--color-primary);">Brownie.ind</h5>
+                        <p class="card-text mb-4" style="color: var(--color-secondary); font-size: 0.95rem;">
+                            Website profil interaktif untuk <em>startup homemade brownie</em>. Dirancang untuk memamerkan katalog produk dengan UI/UX yang menarik, lengkap dengan integrasi media sosial untuk alur pemesanan yang mulus.
+                        </p>
+                        <a href="https://seabreezed.github.io/brownieind-website/" class="btn btn-outline-custom mt-auto w-100 rounded-pill">Lihat Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="bg-light" style="height: 200px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                        <span><img src="profilepic.png"></span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-success rounded-pill fw-normal">Green Tech</span>
+                            <span class="badge bg-primary rounded-pill fw-normal">Web App</span>
+                        </div>
+                        <h5 class="card-title fw-bold" style="color: var(--color-primary);">Eco-Oil Platform</h5>
+                        <p class="card-text mb-4" style="color: var(--color-secondary); font-size: 0.95rem;">
+                            Aplikasi <em>go-green</em> berbasis web yang menjembatani pengepul dan pemasok minyak jelantah. Bertujuan menyederhanakan alur transaksi agar lebih efisien dan menguntungkan kedua belah pihak.
+                        </p>
+                        <a href="#" class="btn btn-outline-custom mt-auto w-100 rounded-pill">Lihat Repositori</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div class="bg-light" style="height: 200px; display: flex; align-items: center; justify-content: center; color: #aaa;">
+                        <span>[Gambar Model ASL]</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-warning text-dark rounded-pill fw-normal">Machine Learning</span>
+                            <span class="badge text-white rounded-pill fw-normal" style="background-color: var(--color-primary);">Computer Vision</span>
+                        </div>
+                        <h5 class="card-title fw-bold" style="color: var(--color-primary);">Real-Time ASL Detection</h5>
+                        <p class="card-text mb-4" style="color: var(--color-secondary); font-size: 0.95rem;">
+                            Model AI berbasis <em>Computer Vision</em> yang siap pakai untuk mendeteksi Bahasa Isyarat Amerika (ASL) secara <em>real-time</em> via kamera. Memiliki akurasi tinggi untuk integrasi aplikasi aksesibilitas.
+                        </p>
+                        <a href="#" class="btn btn-outline-custom mt-auto w-100 rounded-pill">Lihat Kinerja Model</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="container py-5 mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-3">Mari Berkolaborasi<span class="text-accent">!</span></h2>
+                <p class="mb-5" style="color: var(--color-secondary); font-size: 1.1rem;">
+                    Saya selalu terbuka untuk diskusi mengenai data, teknologi inovatif, atau peluang proyek baru. Jangan ragu untuk menyapa melalui platform di bawah ini.
+                </p>
+                
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    
+                    <a href="mailto:elroiraharjo06@gmail.com" class="social-icon" aria-label="Email">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/elroi-yonatan-844923387/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    
+                    <a href="https://github.com/seabreezed" target="_blank" class="social-icon" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    
+                    <a href="https://machung.ac.id/" target="_blank" class="social-icon" aria-label="Universitas Ma Chung">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </a>
+                    
+                    <a href="https://lockey-irawan.github.io/" target="_blank" class="social-icon" aria-label="Project Manager">
+                        <i class="bi bi-person-badge-fill"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 mt-5" style="background-color: var(--color-primary); color: #e2e8f0;">
+        <div class="container text-center">
+            <p class="mb-1 fw-light" style="font-size: 0.95rem;">
+                &copy; 2026 Elroi Yonatan Raharjo
+            </p>
+            <p class="mb-0 fw-light" style="font-size: 0.85rem; opacity: 0.7;">
+                Bagian dari proyek perkuliahan Universitas Ma Chung | Project Manager: Paulus Lucky Irawan
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
